@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ProductCard } from "../../components/elements/ProductCard";
+import { ProductCard } from "../../components/elements/ProductCard"
 import { FilterBar } from "./components/FilterBar";
 import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
