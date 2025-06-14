@@ -1,7 +1,8 @@
+import {login} from "../../services/AuthService"
 import { useRef } from "react"
 import { useNavigate } from "react-router-dom"
 import { toast } from "react-toastify"
-import {login} from "../../services/AuthService"
+
 
 export const Login = () => {
 
