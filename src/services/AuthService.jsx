@@ -10,7 +10,7 @@ export async function login(authDetail)
     
 
 
-  const response = await fetch(`${import.meta.env.VITE_HOST}/login` , requestOptions)
+  const response = await fetch(`${import.meta.env.VITE_API_URL}/login` , requestOptions)
    if(!response.ok){
         throw { message: response.statusText, status: response.status };
     }
@@ -35,7 +35,7 @@ export async function register(authDetail)
 
     }
 
-    const response = await fetch(`${import.meta.env.VITE_HOST}/register` , requestOptions)
+    const response = await fetch(`${import.meta.env.VITE_API_URL}/register` , requestOptions)
      if(!response.ok){
         throw { message: response.statusText, status: response.status };
     }
