@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export async function login(authDetail)
 {
      const requestOptions = {
@@ -10,7 +12,7 @@ export async function login(authDetail)
     
 
 
-  const response = await fetch(`${import.meta.env.VITE_API_URL}/login` , requestOptions)
+  const response = await fetch(`${API_URL}/login` , requestOptions)
    if(!response.ok){
         throw { message: response.statusText, status: response.status };
     }
@@ -35,7 +37,7 @@ export async function register(authDetail)
 
     }
 
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/register` , requestOptions)
+    const response = await fetch(`${API_URL}/register` , requestOptions)
      if(!response.ok){
         throw { message: response.statusText, status: response.status };
     }
