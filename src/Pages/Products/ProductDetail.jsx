@@ -13,7 +13,7 @@ export const ProductDetail = () => {
   
   useEffect(() => {
     async function fetchProducts(){
-      const response = await fetch(`http://localhost:8000/products/${id}`);
+      const response = await fetch(`VITE_API_URL/${id}`);
       const data = await response.json()
       setProduct(data);
     }
