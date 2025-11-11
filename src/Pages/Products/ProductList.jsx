@@ -5,6 +5,9 @@ import { useLocation } from "react-router-dom";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context/filterContext";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+
 export const ProductList = () => {
   const [show, setShow] = useState(false);
    const { products, initialProductList } = useFilter();
@@ -17,7 +20,9 @@ export const ProductList = () => {
 
     async function fetchProducts()
     {
-      const response = await fetch(`http://localhost:8000/products?name_like=${searchTerm ? searchTerm :  ""} `)
+      const response = await fetch(
+  `${API_URL}/products?name_like=${searchTerm ? searchTerm : ""}`
+)
       const data = await response.json()
       const filtered = data.filter(product =>
       product.name.toLowerCase().includes((searchTerm || "").toLowerCase())

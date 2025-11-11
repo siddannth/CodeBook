@@ -4,6 +4,8 @@ import { Rating } from "../../components/elements/Rating";
 import { useTitle } from "../../hooks/useTitle";
 import { useCart } from "../../context/CartContext";
 
+const API_URL = import.meta.env.VITE_API_URL;
+
 export const ProductDetail = () => {
   const {cartList , addToCart , removeFromCart} = useCart()
   const [product, setProduct] = useState({})
@@ -13,7 +15,7 @@ export const ProductDetail = () => {
   
   useEffect(() => {
     async function fetchProducts(){
-      const response = await fetch(`VITE_API_URL/${id}`);
+      const response = await fetch(`${API_URL}/products/${id}`);
       const data = await response.json()
       setProduct(data);
     }

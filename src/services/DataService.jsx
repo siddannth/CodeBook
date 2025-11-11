@@ -1,3 +1,5 @@
+const API_URL = import.meta.env.VITE_API_URL;
+
 export function getSession(){
     const token = JSON.parse(sessionStorage.getItem("token"));
     const cbid = JSON.parse(sessionStorage.getItem("cbid"));
@@ -21,7 +23,7 @@ export async function getUser(){
 
 export async function getUserOrders(){
     const browserData = getSession();
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/660/orders?user.id=${browserData.cbid}`, {
+    const response = await fetch(`${API_URL}/660/orders?user.id=${browserData.cbid}`, {
         method: "GET",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
     });
