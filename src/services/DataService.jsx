@@ -12,7 +12,7 @@ export async function getUser(){
         method: "GET",
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${browserData.token}`}
     }
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/600/users/${browserData.cbid}`, requestOptions);
+    const response = await fetch(`${API_URL}/600/users/${browserData.cbid}`, requestOptions);
     if(!response.ok){
         throw { message: response.statusText, status: response.status }
     }
@@ -46,7 +46,7 @@ export async function createOrder(cartList, total, user){
             id: user.id
         }
     }
-    const response = await fetch(`${import.meta.env.VITE_API_URL}/660/orders`, {
+    const response = await fetch(`${API_URL}/660/orders`, {
     method: "POST",
     headers: { "Content-Type": "application/json", Authorization: `Bearer ${browserData.token}` },
     body: JSON.stringify(order)
